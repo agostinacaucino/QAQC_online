@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QAQC Platform</title>
+
+    <link href= "http://cdn.pydata.org/bokeh/release/bokeh-3.0.1.min.css" rel=”stylesheet” type=”text/css”/>
+    <link href= "http://cdn.pydata.org/bokeh/release/bokeh-widgets-3.0.1.min.css" rel=”stylesheet” type=”text/css”/>
+    <link href= "http://cdn.pydata.org/bokeh/release/bokeh-tables-3.0.1.min.css" rel=”stylesheet” type=”text/css”/>
+</head>
+
+<body>
+    <h1>Aplicación web QAQC</h1>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href={% url 'charts' %}>Gráficos</a></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href={% url 'data' %}>Tablas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href={% url 'health' %}>Health Check</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href={% url 'statistics' %}>Estadísticas</a>
+            </li>
+        </ul>
+    </div>
+   
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    {{div | safe}}  
+
+</body>
+
+<script text="type/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.0.1.min.js"></script>
+<script text="type/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.0.1.min.js"></script>
+<script text="type/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.0.1.min.js"></script>
+<script tex t="type/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-3.0.1.min.js"></script>
+{{script| safe}}
+
+</html>
+
